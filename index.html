@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>数电实验小助手</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+        }
+        h1 { color: #333; margin-bottom: 10px; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>👋 欢迎</h1>
+        <p>点击右下角气泡唤起 数电实验小助手</p>
+    </div>
+
+    <!-- 引入 Coze Web SDK -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.20/libs/cn/index.js"></script>
+    <script>
+        window.onload = function() {
+            new CozeWebSDK.WebChatClient({
+                config: {
+                    // 只需要填 Bot ID 即可，不需要 App ID
+                    bot_id: '7641610165095645224', 
+                },
+                componentProps: {
+                    title: '数电实验小助手',
+                },
+                auth: {
+                    type: 'pat_VxsD7lsZ5JtLt7XlcBETsPOyGnavG0kxyav9KE4wMBgenSHwwrVElBbeadBBBcXd',
+                    // 这里填你的以 pat_ 开头的长令牌
+                    token: 'pat_VxsD7lsZ5JtLt7XlcBETsPOyGnavG0kxyav9KE4wMBgenSHwwrVElBbeadBBBcXd',
+                    onRefreshToken: function () {
+                        return 'pat_VxsD7lsZ5JtLt7XlcBETsPOyGnavG0kxyav9KE4wMBgenSHwwrVElBbeadBBBcXd'
+                    }
+                }
+            });
+        };
+    </script>
+
+</body>
+</html>
